@@ -1,0 +1,55 @@
+<!-- exercise-monitor.component.html -->
+<div class="exercise-monitor">
+    @if (currentExercise) {
+      <div class="card">
+        <div class="card-header">
+          <h2>{{ getExerciseTypeName() }}</h2>
+        </div>
+        
+        <div class="card-body">
+          <div class="stats">
+            <div class="stat-item">
+              <span class="label">Series:</span>
+              <span class="value">{{ currentExercise?.series }}</span>
+            </div>
+            
+            <div class="stat-item">
+              <span class="label">Repeticiones:</span>
+              <span class="value">{{ currentExercise?.repeticiones }}/4</span>
+              
+              <!-- Barra de progreso para repeticiones -->
+              <div class="progress-bar">
+                <div class="progress" [style.width.%]="getRepetitionProgress()"></div>
+              </div>
+            </div>
+            
+            <!-- Solo mostrar para ejercicio de tijera -->
+            @if (currentExercise?.tipo === 'tijera') {
+              <div class="stat-item">
+                <span class="label">Botón actual:</span>
+                <span class="value">{{ currentExercise?.botonActual || 0 }}/4</span>
+                
+                <!-- Indicadores de botones para tijera -->
+                <div class="button-indicators">
+                  @for (i of [0, 1, 2, 3]; track i) {
+                    <div class="button-indicator" 
+                        [class.active]="i < (currentExercise?.botonActual || 0)">
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <p class="last-updated">Última actualización: {{ currentDate | date:'medium' }}</p>
+        </div>
+      </div>
+    } @else {
+      <div class="no-data-message">
+        <p>No hay ejercicio en progreso</p>
+        <p>Selecciona un ejercicio en el dispositivo ESP32</p>
+      </div>
+    }
+  </div>

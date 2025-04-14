@@ -1,0 +1,110 @@
+/* exercise-monitor.component.css */
+.exercise-monitor {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+    
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #fff;
+  }
+    
+  .card-header {
+    padding: 16px;
+    background-color: #3f51b5;
+    color: white;
+  }
+    
+  .card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+    
+  .card-body {
+    padding: 20px;
+  }
+    
+  .stat-item {
+    margin-bottom: 16px;
+  }
+    
+  .label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 4px;
+  }
+    
+  .value {
+    font-size: 1.2rem;
+    color: #333;
+  }
+    
+  .progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    margin-top: 8px;
+    overflow: hidden;
+  }
+    
+  .progress {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+  }
+    
+  .button-indicators {
+    display: flex;
+    margin-top: 8px;
+    gap: 8px;
+  }
+    
+  .button-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+  }
+    
+  .button-indicator.active {
+    background-color: #ff9800;
+  }
+    
+  .card-footer {
+    padding: 12px 16px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+  }
+    
+  .last-updated {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #777;
+  }
+    
+  .no-data-message {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+    
+  .no-data-message p {
+    margin: 8px 0;
+  }
+    
+  .no-data-message p:first-child {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+  }
+    
+  .no-data-message p:last-child {
+    color: #777;
+  }
